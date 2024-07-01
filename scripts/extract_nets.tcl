@@ -107,7 +107,7 @@ proc extract_netlists {item_list {injection_save 0}} {
   set extract_list [list]
   foreach item $item_list {
     set item_type [get_net_type $item]
-    if {$item_type == "Register" || $item_type == "Net" || $item_type == "Enum"} {
+    if {$item_type == "Register" || $item_type == "Net" || $item_type == "Enum" || $item_type == "Signed" || $item_type == "Integer" } {
       lappend extract_list $item
     } elseif { $item_type == "Array"} {
       set array_length [get_net_array_length $item]
